@@ -61,10 +61,10 @@ module reorder_buffer #(
             end
 
             if (m_rdata_buffer[s_arid_FIFO[FIFO_head]][DATA_WIDTH]) begin
-                s_rdata_o <= m_rdata_buffer[s_arid_FIFO[FIFO_head]];
-                s_rid_o <= s_arid_FIFO[FIFO_head];
-                if (s_rready_i) begin
+                if (s_rready_i || !s_rvalid_o) begin
                     FIFO_head <= FIFO_head + 1;
+                    s_rdata_o <= m_rdata_buffer[s_arid_FIFO[FIFO_head]];
+                    s_rid_o <= s_arid_FIFO[FIFO_head];
                 end
                 s_rvalid_o <= 1'b1;
             end

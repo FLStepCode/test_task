@@ -6,15 +6,10 @@ vsim work.tb
 add wave tb/clk
 add wave tb/rst_n
 
-add wave -hex tb/s_ar*
-add wave -hex tb/s_r*
-add wave -hex tb/m_ar*
-add wave -hex tb/m_r*
-
-add wave -hex tb/rb/s_arid_FIFO 
-add wave -hex tb/rb/FIFO_head 
-add wave -hex tb/rb/FIFO_tail 
-add wave -hex tb/rb/m_rdata_buffer
+add wave -hex tb/rb/s_ar*
+add wave -hex tb/rb/s_r*
+add wave -hex tb/rb/m_ar*
+add wave -hex tb/rb/m_r*
 
 run -all
 wave zoom full

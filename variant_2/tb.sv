@@ -184,7 +184,15 @@ initial begin
 
     join
 
-    #100;
+    #35;
+    @(posedge clk) begin
+        s_rready_i <= 0;
+    end
+    #25;
+    @(posedge clk) begin
+        s_rready_i <= 1;
+    end
+    #60;
     $stop;
 
 end
