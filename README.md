@@ -69,7 +69,7 @@ logic [DATA_WIDTH:0] m_rdata_buffer [0:15];
         FIFO_tail <= FIFO_tail + 1;
     end
     ```
-* При наличии необходимых сигналов пакет данных от master-устройства записывается в очередь:
+* При наличии необходимых сигналов пакет данных от master-устройства записывается в буфер по индексу ID:
     ```
     if (m_rvalid_i && m_rready_o) begin
         m_rdata_buffer[m_rid_i] <= {1'b1, m_rdata_i};
