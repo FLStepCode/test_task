@@ -86,3 +86,5 @@ logic [DATA_WIDTH:0] m_rdata_buffer [0:15];
         s_rvalid_o <= 1'b1;
     end
     ```
+## Запуск тестбенча
+В папке ./variant_2/modelsim есть файл modelsim_run.bat. Данный батч скрипт приказывает ModelSim скомпилировать тестбенч tb.sv и вывести релевантные сигналы на временную диаграмму согласно скрипту modelsim_script.tcl
